@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { getMockData } from '../utilities/mockData';
+import { Autocomplete, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 
 
 const SampleComponent = () => {
@@ -86,33 +87,40 @@ const SampleComponent = () => {
   ];
 
   return (
-    <div>
-      <select value={selectedLob} onChange={e => setSelectedLob(e.target.value)}>
-        <option value="">Select LOB</option>
-        {lobOptions.map(lob => (
-          <option key={lob} value={lob}>{lob}</option>
-        ))}
-      </select>
-      <select
-        value={selectedAppShort}
-        onChange={e => setSelectedAppShort(e.target.value)}
+    <div style={{marginTop: '20px'}}>
+     
+      <FormControl>
+        <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={lobOptions}
+        sx={{ width: 250, marginRight: 2,  marginBottom: 2}}
+        onChange={(e, value) => setSelectedLob(value)}
+        renderInput={(params) => <TextField {...params} label="Select LOB" />}
+      />
+      </FormControl>
+      <FormControl>
+      <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={appShortOptions}
+        sx={{ width: 170, marginRight: 2,  marginBottom: 2}}
         disabled={appShortDisabled}
-      >
-        <option value="">Select App Short</option>
-        {appShortOptions.map(appShort => (
-          <option key={appShort} value={appShort}>{appShort}</option>
-        ))}
-      </select>
-      <select
-        value={selectedAppName}
-        onChange={e => setSelectedAppName(e.target.value)}
-        disabled={appNameDisabled}
-      >
-        <option value="">Select App Name</option>
-        {appNameOptions.map(appName => (
-          <option key={appName} value={appName}>{appName}</option>
-        ))}
-      </select>
+        onChange={(e, value) => setSelectedAppShort(value)}
+        renderInput={(params) => <TextField {...params} label="Select App Short" />}
+      />
+      </FormControl>
+      <FormControl>
+      <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={appNameOptions}
+        sx={{ width: 170 }}
+        disabled={appShortDisabled}
+        onChange={(e, value) => setSelectedAppName(value)}
+        renderInput={(params) => <TextField {...params} label="Select App Name" />}
+      />
+      </FormControl>
 
       <div style={{ height: 400, width: '100%' }}>
         <DataGrid
