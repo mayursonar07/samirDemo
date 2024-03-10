@@ -1,0 +1,71 @@
+{
+    "data_set" : [
+        {
+            "id": 1,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 10155,
+            "App Name": "AppOne",
+            "App Short": "WAM",
+            "component_name": "ca0115_wam",
+            "archetypes_str" : "['Web Application']",
+            "landing_zone_future_str" : "['Retire']",
+            "blueprints_future_str": "[]"
+        },
+        {
+            "id": 2,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 10155,
+            "App Name": "AppOne",
+            "App Short": "WAM",
+            "component_name": "item-eme-item_src_wam_com",
+            "archetypes_str" : "[]",
+            "landing_zone_future_str" : "['Retire']",
+            "blueprints_future_str": "[]"
+        },
+        {
+            "id": 3,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 10155,
+            "App Name": "AppOne",
+            "App Short": "WAM",
+            "component_name": "item-eme-item-item_src-item_src_wam",
+            "archetypes_str" : "[]",
+            "landing_zone_future_str" : "['Retire']",
+            "blueprints_future_str": "[]"
+        },
+        {
+            "id": 4,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 12359,
+            "App Name": "CORPORATE PATRIOT ACT COMPLIANCE SYSTEM",
+            "App Short": "1CPA",
+            "component_name": "app-1cpa",
+            "archetypes_str" : "[]",
+            "landing_zone_future_str" : "['Retire']",
+            "blueprints_future_str": "[]"
+        },
+        {
+            "id": 5,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 12359,
+            "App Name": "CORPORATE PATRIOT ACT COMPLIANCE SYSTEM",
+            "App Short": "1CPA",
+            "component_name": "cpacs",
+            "archetypes_str" : "['Web Application']",
+            "landing_zone_future_str" : "['Retire']",
+            "blueprints_future_str": "[]"
+        },
+        {
+            "id": 6,
+            "LOB": "ENT FUNC TECH",
+            "application_id": 12370,
+            "App Name": "CORPORATE PATRIOT ACT COMPLIANCE SYSTEM",
+            "App Short": "1csc",
+            "component_name": "databases",
+            "archetypes_str" : "[]",
+            "landing_zone_future_str" : "['Azure App Service']",
+            "blueprints_future_str": "[]"
+        }
+
+    ]
+}
