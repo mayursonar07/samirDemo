@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { getMockData } from '../utilities/mockData';
-import { Autocomplete, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Autocomplete, FormControl, TextField } from '@mui/material';
 
 
 const SampleComponent = () => {
@@ -92,7 +92,7 @@ const SampleComponent = () => {
       <FormControl>
         <Autocomplete
         disablePortal
-        id="combo-box-demo"
+        id="lob"
         options={lobOptions}
         sx={{ width: 250, marginRight: 2,  marginBottom: 2}}
         onChange={(e, value) => setSelectedLob(value)}
@@ -102,7 +102,7 @@ const SampleComponent = () => {
       <FormControl>
       <Autocomplete
         disablePortal
-        id="combo-box-demo"
+        id="appShort"
         options={appShortOptions}
         sx={{ width: 170, marginRight: 2,  marginBottom: 2}}
         disabled={appShortDisabled}
@@ -113,10 +113,10 @@ const SampleComponent = () => {
       <FormControl>
       <Autocomplete
         disablePortal
-        id="combo-box-demo"
+        id="appName"
         options={appNameOptions}
         sx={{ width: 170 }}
-        disabled={appShortDisabled}
+        disabled={appNameDisabled}
         onChange={(e, value) => setSelectedAppName(value)}
         renderInput={(params) => <TextField {...params} label="Select App Name" />}
       />
