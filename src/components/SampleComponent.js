@@ -65,7 +65,7 @@ const SampleComponent = () => {
 
   // Filtering components based on selected values
   useEffect(() => {
-    if (selectedLob && selectedAppShort && selectedAppName) {
+    if (selectedLob && (selectedAppShort || selectedAppName)) {
       const filtered = data.filter(
         item =>
           item.LOB === selectedLob &&
