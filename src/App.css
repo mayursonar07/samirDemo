@@ -4,7 +4,10 @@
   padding: 20px;
 
 }
-.text-container, .img-container{
+.text-container{
+  flex: 2;
+}
+.img-container{
   flex: 1;
 }
 .text-container p{
@@ -23,4 +26,96 @@
   border: 1px solid orange;
   font-weight: bold;
   color: white;
+}
+.logo-component-container{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  border: 1px solid lightgrey;
+  
+  margin: 70px;
+}
+.logo-component{
+  background-color: lightgrey;
+}
+.logo-component img{
+  height:40px;
+  width: 40px;
+}
+.navigate-path-main-container{
+  border: 1px solid lightgray;
+  margin: 30px;
+}
+.map-journey span{
+  background-color:lightgreen;
+  color: green;font-weight: bold;
+  padding: 3px;
+  padding-top: 0;
+  font-size: 16px;
+}
+.navigate-path-text{
+  margin-top: 10px;
+}
+.text-content-container p{
+  max-width: 400px;
+}
+.checkbox-component:not(:last-child){
+  margin-bottom: 5px;
+}
+.checkbox-component input[type='checkbox'] {
+  accent-color: red;
+}
+.navigate-path-main-container .img-container{
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.navigate-path-main-container .img-container img{
+  height:30px;
+  width: 30px;
+}
+.navigate-path-main-container .content-container{
+  display: flex;
+  align-items: center;
+
+}
+.navigate-path-main-container .content-container .left-container{
+  flex: 2;
+}
+.navigate-path-main-container .content-container .right-container{
+  flex: 1;
+}
+.navigate-path-main-container .content-container .right-container img{
+  height: 300px;
+  width: 300px;
+}
+.switch-main-container{
+  display: flex;
+    
+    max-width: 300px;
+    align-items: center;
+    background: lightgray;
+    border-radius: 5px;
+    /* padding: 10px; */
+    /* justify-content: space-between;*/
+}
+.switch-main-container .switch-left-container{
+  background-color: #fff;
+  padding: 9px;
+  margin: 3px;
+  border-radius: 5px;
+}
+.switch-main-container .switch-left-container .text-container{
+  color: green;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.switch-main-container .switch-right-container{
+  margin-left: 30px;
+}
+
+.switch-main-container .switch-right-container .text-container{
+  color: gray;
+  font-weight: bold;
+  font-size: 14px;
 }
