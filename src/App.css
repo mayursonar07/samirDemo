@@ -58,6 +58,8 @@
 }
 .text-content-container p{
   max-width: 400px;
+  color: gray;
+  font-size: 14px;
 }
 .checkbox-component:not(:last-child){
   margin-bottom: 5px;
@@ -170,4 +172,71 @@
 }
 .thumbnail-icon-container img{
   height:30px;
+}
+.badge-content{
+  background-color: lightblue;
+    color: blue;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.ConnectionsNApplications-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top:30px;
+  padding: 20px;
+}
+.ConnectionsNApplications-container .textual-content-container{
+  padding: 30px 0 30px 0;
+}
+.image-main-container{
+  text-align: center;
+  background-color: lightgrey;
+  color: white;
+}
+.image-container{
+  margin-top: 20%;
+}
+.testimonial-main-container{
+  padding: 25px;
+  background: black;
+  color: #fff;
+}
+.testimonials-text-container{
+  max-width: 400px;
+}
+.testmonial-card-main-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 3%;
+  margin-top: 50px;
+}
+.testimonial-card-container{
+padding: 10px;
+border: 1px solid #5d5353;
+background: #292727;
+}
+.name-container{
+  font-size: 18px;
+  font-weight: bold;
+}
+.country-container{
+  font-size: 12px;
+  font-weight: bold;
+}
+.customer-speaks-container{
+  margin-top:20px;
+  font-size:12px;
+}
+.user-info-container{
+  margin-top:20px;
+}
+.logo-container{
+  margin-top:5px;
+}
+.logo-container span{
+  padding: 5px;
+  background: #fff;
+  color: black;
+  font-size: 10px;
 }
