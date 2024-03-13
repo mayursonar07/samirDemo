@@ -11,6 +11,7 @@ import UpdateIcon from '@mui/icons-material/Update';
 const SampleComponent = () => {
   // This is the mock data to be fetched
   const [data, setMockData] = useState([]);
+  const [columnValueOptions, setColumnValueOptions] = useState({});
   const [lobOptions, setLobOptions] = useState([]);
   const [appShortOptions, setAppShortOptions] = useState([]);
   const [appNameOptions, setAppNameOptions] = useState([]);
@@ -28,6 +29,11 @@ const SampleComponent = () => {
     getMockData().then((data) => {
       console.log("fetched Data: ", data.data_set);
       setMockData(data.data_set);
+      setColumnValueOptions({
+        archetypes_str: data.archetypes_str,
+        landing_zone_future_str: data.landing_zone_future_str,
+        blueprints_future_str: data.blueprints_future_str
+      })
     });
   }, []);
 
@@ -91,8 +97,9 @@ const SampleComponent = () => {
       field: field,
       value: value
     });
-    // Extracting all possible values for the selected column
-    const columnValues = data.map(item => item[field]);
+    // Extracting all possible values for the selected column    
+    const columnValues = columnValueOptions[field];
+    console.log("columnValues :", columnValues);
     setAutocompleteOptions(Array.from(new Set(columnValues)));
   };
     // Handle AutoComplete change
@@ -123,9 +130,13 @@ const SampleComponent = () => {
       <>
         {params.id === editCell?.id && params.field === editCell?.field ? (
           <Autocomplete
+            sx={{ width: '100%' }}
             options={autocompleteOptions}
             value={params.value}
-            onChange={(event, newValue) => handleAutocompleteChange(newValue)}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
             onClose={handleAutocompleteClose}
             renderInput={(params) => <TextField {...params} />}
           />
@@ -143,9 +154,13 @@ const SampleComponent = () => {
       <>
         {params.id === editCell?.id && params.field === editCell?.field ? (
           <Autocomplete
+            sx={{ width: '100%' }}
             options={autocompleteOptions}
             value={params.value}
-            onChange={(event, newValue) => handleAutocompleteChange(newValue)}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
             onClose={handleAutocompleteClose}
             renderInput={(params) => <TextField {...params} />}
           />
@@ -163,9 +178,13 @@ const SampleComponent = () => {
       <>
         {params.id === editCell?.id && params.field === editCell?.field ? (
           <Autocomplete
+            sx={{ width: '100%' }}
             options={autocompleteOptions}
             value={params.value}
-            onChange={(event, newValue) => handleAutocompleteChange(newValue)}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
             onClose={handleAutocompleteClose}
             renderInput={(params) => <TextField {...params} />}
           />

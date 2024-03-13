@@ -68,7 +68,7 @@
         }
 
     ],
-    "Archetype_Names": [
+    "archetypes_str": [
         "AI ML Model Consumption",
         "Ai ML Model Development",
         "Application Database",
@@ -77,7 +77,7 @@
         "Conversational AI application",
         "Web Application"
     ],
-    "Landing_Zone_names" : [
+    "landing_zone_future_str" : [
         "Azure App Service",
         "Azure Kubernetes Service",
         "Azure Public Cloud",
@@ -89,7 +89,7 @@
         "TAS",
         "TKGI"
     ],
-    "Blueprint Names": [
+    "blueprints_future_str": [
         "Web Application - Azure ASE",
         "Conversational AI Application - GCP",
         "Application Database-Azure",

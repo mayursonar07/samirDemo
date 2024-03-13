@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <SampleComponent/>
       <Component2 />
       <div className="logo-component-container">{getLogocomponent()}</div>
       <NavigatePathComponent />
