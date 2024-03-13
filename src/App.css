@@ -240,3 +240,47 @@ background: #292727;
   color: black;
   font-size: 10px;
 }
+.toggle-btn-container{
+  background: #ddd;
+  max-width: 250px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+/*.toggle-button.on {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.toggle-button.off {
+  background-color: #f44336;
+  color: white;
+}*/
+.toggle-button-off{
+  padding: 9px;
+  background: #fff;
+  border: #fff;
+  border-radius: 5px;
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+}
+.toggle-button-on{
+  
+  background: #ddd;
+  border: #ddd;
+  border-radius: 5px;
+  color: gray;
+  cursor: pointer;
+  padding-left: 25px;
+}
+.padding-right{
+  padding-right:38px;
+}

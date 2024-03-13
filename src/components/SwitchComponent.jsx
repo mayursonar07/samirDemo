@@ -1,16 +1,29 @@
 import React from "react";
+import { useState } from "react";
 
 const SwitchComponent = () => {
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleChange = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
-    <div>
-      <div className="switch-main-container">
-        <div className="switch-left-container">
-          <span className="text-container">Financial Institutions</span>
-        </div>
-        <div className="switch-right-container">
-          <span className="text-container">Fintechs</span>
-        </div>
-      </div>
+    <div className="toggle-btn-container">
+      <button
+        onClick={handleChange}
+        className={`${isToggled ? "toggle-button-off" : "toggle-button-on"}`}
+      >
+        Financial Institutions
+      </button>
+      <button
+        onClick={handleChange}
+        className={`${
+          isToggled ? "toggle-button-on" : "toggle-button-off padding-right"
+        }`}
+      >
+        <span>Fintechs</span>
+      </button>
     </div>
   );
 };
