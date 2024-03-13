@@ -2,8 +2,7 @@ import "./App.css";
 import Component2 from "./components/Component2";
 import Logocomponent from "./components/Logocomponent";
 import NavigatePathComponent from "./components/NavigatePathComponent";
-
-//import SampleComponent from "./components/SampleComponent";
+import ExchangePointComponent from "./components/ExchangePointComponent";
 
 function App() {
   const getLogocomponent = () => {
@@ -21,6 +20,7 @@ function App() {
       <Component2 />
       <div className="logo-component-container">{getLogocomponent()}</div>
       <NavigatePathComponent />
+      <ExchangePointComponent />
     </div>
   );
 }

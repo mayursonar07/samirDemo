@@ -1,0 +1,35 @@
+{
+    "thumbnails": [
+        {
+            "icon": "thumbs-up",
+            "heading": "Innovation Injection",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+
+        },
+        {
+            "icon": "thumbs-up",
+            "heading": "Cutting-Edge Solutions",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        },
+        {
+            "icon": "thumbs-up",
+            "heading": "Industry Expertise",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        },
+        {
+            "icon": "thumbs-up",
+            "heading": "Regulatory Expertise",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        },
+        {
+            "icon": "thumbs-up",
+            "heading": "Strategic Guidance",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        },
+        {
+            "icon": "thumbs-up",
+            "heading": "Credibility and Trust",
+            "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        }
+    ]
+}

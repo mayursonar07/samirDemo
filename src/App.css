@@ -119,3 +119,55 @@
   font-weight: bold;
   font-size: 14px;
 }
+/*Component 4*/
+.exchange-point-main-container{
+  background-color:#f3f3f37d;
+  padding: 20px;
+}
+.exchange-point-label-container{
+  margin-top: 50px;
+}
+.exchange-point-label{
+  font-size: 10px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: lightblue;
+  color: #4444a3;
+}
+.vital-role-info-container p{
+  font-size: 14px;
+  color: gray;
+  max-width: 700px;
+}
+.vital-role-btn-container{
+  margin-top: 20px;
+}
+.vital-role-btn-container button{
+  padding: 10px;
+    color: #fff;
+    background: orange;
+    border: 1px solid orange;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.thumbnails-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+}
+.thumbnail-container{
+  padding: 20px;
+  padding-left: 0;
+  max-width: 85%;
+}
+.thumbnail-header-container{
+  font-weight: bold;
+}
+.thumbnail-info-container{
+  font-size: 12px;
+  margin-top: 5px;
+  color: gray;
+}
+.thumbnail-icon-container img{
+  height:30px;
+}
