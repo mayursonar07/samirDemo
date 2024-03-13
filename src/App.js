@@ -3,6 +3,7 @@ import Component2 from "./components/Component2";
 import Logocomponent from "./components/Logocomponent";
 import NavigatePathComponent from "./components/NavigatePathComponent";
 import ExchangePointComponent from "./components/ExchangePointComponent";
+import SampleComponent from "./components/SampleComponent";
 import ConnectionsNApplicationsComponent from "./components/ConnectionsNApplicationsComponent";
 import TestimonialComponent from "./components/TestimonialComponent";
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <SampleComponent/>
       <Component2 />
       <div className="logo-component-container">{getLogocomponent()}</div>
       <NavigatePathComponent />

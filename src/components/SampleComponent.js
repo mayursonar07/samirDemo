@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { getMockData } from "../utilities/mockData";
-import { Autocomplete, FormControl } from "@mui/material";
+import { Autocomplete, FormControl, IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import EditIcon from '@mui/icons-material/Edit';
+import UpdateIcon from '@mui/icons-material/Update';
 // or
 //import { TextField } from '@mui/material';
 
 const SampleComponent = () => {
   // This is the mock data to be fetched
   const [data, setMockData] = useState([]);
+  const [columnValueOptions, setColumnValueOptions] = useState({});
   const [lobOptions, setLobOptions] = useState([]);
   const [appShortOptions, setAppShortOptions] = useState([]);
   const [appNameOptions, setAppNameOptions] = useState([]);
@@ -18,12 +21,19 @@ const SampleComponent = () => {
   const [filteredComponents, setFilteredComponents] = useState([]);
   const [appShortDisabled, setAppShortDisabled] = useState(true);
   const [appNameDisabled, setAppNameDisabled] = useState(true);
+  const [editCell, setEditCell] = useState(null);
+  const [autocompleteOptions, setAutocompleteOptions] = useState([]);
 
   // Here we fetch the data from url using axios or/mockdata
   useEffect(() => {
     getMockData().then((data) => {
       console.log("fetched Data: ", data.data_set);
       setMockData(data.data_set);
+      setColumnValueOptions({
+        archetypes_str: data.archetypes_str,
+        landing_zone_future_str: data.landing_zone_future_str,
+        blueprints_future_str: data.blueprints_future_str
+      })
     });
   }, []);
 
@@ -79,21 +89,117 @@ const SampleComponent = () => {
     }
   }, [data, selectedLob, selectedAppShort, selectedAppName]);
 
-  // Define columns for DataGrid
+  // Handle cell edit button click
+  // Handle cell edit button click
+  const handleCellEditClick = (id, field, value) => {
+    setEditCell({
+      id: id,
+      field: field,
+      value: value
+    });
+    // Extracting all possible values for the selected column    
+    const columnValues = columnValueOptions[field];
+    console.log("columnValues :", columnValues);
+    setAutocompleteOptions(Array.from(new Set(columnValues)));
+  };
+    // Handle AutoComplete change
+    const handleAutocompleteChange = (newValue) => {
+
+      console.log('======= Cell edited ======');
+      console.log(' Below are the details of edited cell ..');
+      console.log(" New value ",newValue);
+      console.log(" edited cell details: ", editCell);
+      console.log(' ==== Here you may call the webservice to update the value in DB ======');
+      setFilteredComponents(filteredComponents.map(row => {
+        if (row.id === editCell.id) {
+          return { ...row, [editCell.field]: newValue };
+        }
+        return row;
+      }));
+    };
+  
+    // Handle AutoComplete close
+    const handleAutocompleteClose = () => {
+      setEditCell(null);
+    };
+
+   // Define columns for DataGrid
   const columns = [
-    { field: "component_name", headerName: "Component Name", flex: 1 },
-    { field: "archetypes_str", headerName: "Archetypes", flex: 1 },
-    {
-      field: "landing_zone_future_str",
-      headerName: "Landing Zone Future",
-      flex: 1,
-    },
-    {
-      field: "blueprints_future_str",
-      headerName: "Blueprints Future",
-      flex: 1,
-    },
+    { field: 'component_name', headerName: 'Component Name', flex: 1},
+    { field: 'archetypes_str', headerName: 'Archetypes', flex: 1, renderCell: (params) => (
+      <>
+        {params.id === editCell?.id && params.field === editCell?.field ? (
+          <Autocomplete
+            sx={{ width: '100%' }}
+            options={autocompleteOptions}
+            value={params.value}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
+            onClose={handleAutocompleteClose}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        ) : (
+          <>
+            {params.value}
+            <IconButton onClick={() => handleCellEditClick(params.row.id, 'archetypes_str', params.value)}>
+              {params.id === editCell?.id && params.field === editCell?.field ? <UpdateIcon /> : <EditIcon />}
+            </IconButton>
+          </>
+        )}
+      </>
+    )},
+    { field: 'landing_zone_future_str', headerName: 'Landing Zone Future', flex: 1, renderCell: (params) => (
+      <>
+        {params.id === editCell?.id && params.field === editCell?.field ? (
+          <Autocomplete
+            sx={{ width: '100%' }}
+            options={autocompleteOptions}
+            value={params.value}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
+            onClose={handleAutocompleteClose}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        ) : (
+          <>
+            {params.value}
+            <IconButton onClick={() => handleCellEditClick(params.row.id, 'landing_zone_future_str', params.value)}>
+              {params.id === editCell?.id && params.field === editCell?.field ? <UpdateIcon /> : <EditIcon />}
+            </IconButton>
+          </>
+        )}
+      </>
+    )},
+    { field: 'blueprints_future_str', headerName: 'Blueprints Future', flex: 1, renderCell: (params) => (
+      <>
+        {params.id === editCell?.id && params.field === editCell?.field ? (
+          <Autocomplete
+            sx={{ width: '100%' }}
+            options={autocompleteOptions}
+            value={params.value}
+            onChange={(event, newValue) => {
+              if(newValue === null) newValue = params.value
+              handleAutocompleteChange(newValue)}
+            }
+            onClose={handleAutocompleteClose}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        ) : (
+          <>
+            {params.value}
+            <IconButton onClick={() => handleCellEditClick(params.row.id, 'blueprints_future_str', params.value)}>
+              {params.id === editCell?.id && params.field === editCell?.field ? <UpdateIcon /> : <EditIcon />}
+            </IconButton>
+          </>
+        )}
+      </>
+    )},
   ];
+
 
   return (
     <div style={{ marginTop: "20px" }}>
@@ -143,6 +249,7 @@ const SampleComponent = () => {
           disableSelectionOnClick
         />
       </div>
+      
     </div>
   );
 };

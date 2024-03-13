@@ -67,5 +67,37 @@
             "blueprints_future_str": "[]"
         }
 
+    ],
+    "archetypes_str": [
+        "AI ML Model Consumption",
+        "Ai ML Model Development",
+        "Application Database",
+        "Batch",
+        "Business intelligence",
+        "Conversational AI application",
+        "Web Application"
+    ],
+    "landing_zone_future_str" : [
+        "Azure App Service",
+        "Azure Kubernetes Service",
+        "Azure Public Cloud",
+        "Azure Stack HCI",
+        "Enterprise",
+        "Google Anthos",
+        "Google Cloud Platform",
+        "Google Kubernetes Engine",
+        "TAS",
+        "TKGI"
+    ],
+    "blueprints_future_str": [
+        "Web Application - Azure ASE",
+        "Conversational AI Application - GCP",
+        "Application Database-Azure",
+        "AI-ML Model Consumption-GCP",
+        "Data Pipline - Azue",
+        "Batch Application on Azure",
+        "Static Web Application - AKS",
+        "Web Application -TKGI",
+        "Web Application - TAS-PCF"
     ]
 }
