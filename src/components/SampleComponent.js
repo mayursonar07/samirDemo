@@ -5,6 +5,7 @@ import { Autocomplete, FormControl, IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import EditIcon from '@mui/icons-material/Edit';
 import UpdateIcon from '@mui/icons-material/Update';
+import axios from "axios";
 // or
 //import { TextField } from '@mui/material';
 
@@ -110,6 +111,22 @@ const SampleComponent = () => {
       console.log(" New value ",newValue);
       console.log(" edited cell details: ", editCell);
       console.log(' ==== Here you may call the webservice to update the value in DB ======');
+
+      // Call patch'
+      //const updateVal = {editCell?.field}
+     // axios.patch(`http://localhost:8080/data_set/${editCell.id}`, {editCell.field: newValue})
+
+     // Update the data in the db.json file using Axios
+      const updateUrl = `http://localhost:8080/data_set/${editCell.id}`;
+      const updateField = { [editCell.field]: newValue };
+      axios.patch(updateUrl, updateField)
+      .then(response => {
+        console.log("Data updated successfully:", response.data);
+      })
+      .catch(error => {
+        console.error("Error updating data:", error);
+      });
+
       setFilteredComponents(filteredComponents.map(row => {
         if (row.id === editCell.id) {
           return { ...row, [editCell.field]: newValue };
