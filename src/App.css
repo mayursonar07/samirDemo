@@ -284,3 +284,43 @@ background: #292727;
 .padding-right{
   padding-right:38px;
 }
+
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Add more CSS styles as needed */
+
+.parallax{
+  width: 600px;
+  position: relative;
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+}
+
+.imageBox{
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 16px;
+  background-color: ghostwhite;
+  width: 140px;
+  height: 128px;
+  padding: 16px;
+}
+.imageBox:nth-child(4){
+  grid-column: 2/4;
+} 
+
+.overlay {
+  position: absolute;
+  width: 465px; /* Adjust overlay width as needed */
+  height: 425px; /* Adjust overlay height as needed */
+  /* background-color: rgba(255, 0, 0, 0.5); Example background color */
+  border: 1px solid;
+  top: 60px; /* Half of overlay height */
+  left: 62px; /* Half of overlay width */
+}
