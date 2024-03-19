@@ -43,7 +43,10 @@ const ParallaxScrolling = () => {
     return (        
         <>
         <div className='mainContainerForParallax'>
-            <div className="overlay"></div>
+            <div className="overlay1 overlaySize"></div>
+            <div className="overlay2 overlaySize"></div>
+            <div className="overlay3 overlaySize"></div>
+            <div className="overlay4 overlaySize"></div>
             <div className="parallax">
                 <div className='imageBox'>Get Started</div>
                 <div className='imageBox'>Discover</div>

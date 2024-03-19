@@ -315,12 +315,39 @@ background: #292727;
   grid-column: 2/4;
 } 
 
-.overlay {
+.overlaySize {
   position: absolute;
-  width: 465px; /* Adjust overlay width as needed */
-  height: 425px; /* Adjust overlay height as needed */
+  width: 230px; /* Adjust overlay width as needed */
+  height: 200px; /* Adjust overlay height as needed */
+}
+.overlay1 {
+
   /* background-color: rgba(255, 0, 0, 0.5); Example background color */
-  border: 1px solid;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
   top: 60px; /* Half of overlay height */
-  left: 62px; /* Half of overlay width */
+  left: 68px; /* Half of overlay width */
+}
+.overlay2 {
+  /* background-color: rgba(255, 0, 0, 0.5); Example background color */
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  top: 60px; /* Half of overlay height */
+  left: 299px; /* Half of overlay width */
+}
+.overlay3 {
+  /* background-color: rgba(255, 0, 0, 0.5); Example background color */
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  top: 285px; /* Half of overlay height */
+  left: 68px; /* Half of overlay width */
+}
+.overlay4 {
+  border-bottom: 1px solid;
+  top: 285px; /* Half of overlay height */
+  left: 299px; /* Half of overlay width */
 }
