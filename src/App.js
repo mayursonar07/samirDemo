@@ -20,14 +20,14 @@ function App() {
 
   return (
     <div className="App">
-      <ParallaxScrolling/>
+      {/* <ParallaxScrolling/> */}
       <SampleComponent/>
-      <Component2 />
+      {/* <Component2 />
       <div className="logo-component-container">{getLogocomponent()}</div>
       <NavigatePathComponent />
       <ExchangePointComponent />
       <ConnectionsNApplicationsComponent />
-      <TestimonialComponent />
+      <TestimonialComponent /> */}
     </div>
   );
 }
